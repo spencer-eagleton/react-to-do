@@ -1,11 +1,11 @@
-export default function AuthForm() {
+export default function AuthForm({ email, setEmail, password, setPassword, handleSubmit }) {
   return (
     <div>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Email:</label>
-        <input type="email" />
+        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
         <label>Password:</label>
-        <input type="password" />
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
         <input type="submit" />
       </form>
     </div>
