@@ -6,7 +6,12 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Switch>
-          <Route></Route>
+          <Route path="/signin" exact>
+            <SignIn />
+          </Route>
+          <Route path="/signup" exact>
+            <SignUp />
+          </Route>
         </Switch>
       </BrowserRouter>
     </div>
