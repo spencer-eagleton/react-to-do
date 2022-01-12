@@ -1,6 +1,7 @@
 import ToDoForm from '../Components/ToDoForm';
 import { useState } from 'react';
-import { createToDo } from '../services/todos';
+import { createToDo, fetchToDos } from '../services/todos';
+
 export default function Home() {
   const [newTask, setNewTask] = useState('');
   const submit = async (e) => {
