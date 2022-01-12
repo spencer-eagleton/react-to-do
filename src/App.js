@@ -1,6 +1,6 @@
 import { Switch } from 'react-router-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
-
+import Home from './Views/Home';
 import { useState } from 'react';
 import './App.css';
 import { getUser, logout } from './services/users';
@@ -19,7 +19,7 @@ function App() {
           <Route path="/" exact>
             {currentUser && (
               <>
-                <h1>I am signed in!</h1>
+                <Home />
                 <button onClick={logoutUser}>Log Out</button>
               </>
             )}
