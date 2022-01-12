@@ -1,13 +1,17 @@
-export default function Home({ handleSubmit, newTask, setNewTask }) {
+import ToDoForm from '../Components/ToDoForm';
+import { useState } from 'react';
+import { createToDo } from '../services/todos';
+export default function Home() {
+  const [newTask, setNewTask] = useState('');
+  const submit = async (e) => {
+    e.preventDefault();
+    await createToDo({ newTask });
+  };
   return (
     <div>
       <h1>Your to-do list</h1>
 
-      <form onSubmit={handleSubmit}>
-        <label>New Task</label>
-        <input type="text" value={newTask} onChange={(e) => setNewTask(e.target.value)}></input>
-        <input type="submit" />
-      </form>
+      <ToDoForm newTask={newTask} setNewTask={setNewTask} handleSubmit={submit} />
     </div>
   );
 }
