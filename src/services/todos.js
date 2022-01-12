@@ -7,5 +7,10 @@ export async function createToDo(task) {
 
 export async function fetchToDos() {
   const resp = await client.from('todos').select('*');
-  checkError(resp);
+  return checkError(resp);
+}
+
+export async function toggleCompleted(id, is_complete) {
+  const resp = await client.from('todos').update({ is_complete });
+  return checkError(resp);
 }
