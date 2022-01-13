@@ -1,0 +1,12 @@
+.tabs {
+  display: flex;
+}
+
+.tabs h1 {
+  margin: 5px;
+  cursor: pointer;
+}
+
+.tabs h1.active {
+  border-bottom: 2px solid black;
+}
