@@ -18,7 +18,8 @@ export default function Home() {
 
   const submit = async (e) => {
     e.preventDefault();
-    await createToDo(newTask);
+    const resp = await createToDo(newTask);
+    setToDos((prev) => [...prev, resp[0]]);
   };
 
   const handleClick = async (newTask) => {
